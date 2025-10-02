@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment One-Pager - 10M KES</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            padding: 20px;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #333;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .three-column {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .two-column {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .section {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        
+        .section p, .section li {
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: #333;
+        }
+        
+        .profit-comparison {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .profit-box {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            color: white;
+        }
+        
+        .old-model {
+            background: #dc3545;
+        }
+        
+        .new-model {
+            background: #28a745;
+        }
+        
+        .profit-box h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .profit-box .big-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+        
+        .profit-box p {
+            font-size: 14px;
+            color: white;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #ecf0f1;
+            font-size: 13px;
+        }
+        
+        .breakdown-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+        }
+        
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .roi-card {
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            border: 1px solid #0056b3;
+            text-align: center;
+        }
+        
+        .roi-card .number {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .roi-card p {
+            font-size: 11px;
+            margin: 0;
+            color: white;
+        }
+        
+        .year-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .year-box {
+            background: #333;
+            color: white;
+            padding: 8px;
+            border: 1px solid #000;
+            text-align: center;
+            font-size: 11px;
+        }
+        
+        .year-box .year {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        
+        .year-box .volume {
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .highlight-box {
+            background: #ffc107;
+            color: #000;
+            padding: 15px;
+            border: 2px solid #000;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box h3 {
+            color: #000;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box p {
+            color: #000;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        ul {
+            padding-left: 18px;
+        }
+        
+        ul li {
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 2px solid #333;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        /* Chart containers */
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin: 15px 0;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        .chart-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .container {
+                max-width: none;
+                width: 100%;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+        
+        @page {
+            margin: 0.5in;
+            size: letter;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>INVESTMENT OPPORTUNITY</h1>
+            <h2>10,000,000 KES Funding Request</h2>
+            <p>Direct-Source Carton Distribution Business • Eliminate Middlemen • Triple Profit Margins</p>
+        </div>
+        
+        <!-- Business Transformation -->
+        <div class="section">
+            <h3>THE TRANSFORMATION: 300% PROFIT INCREASE</h3>
+            <div class="profit-comparison">
+                <div class="profit-box old-model">
+                    <h4>OLD MODEL (Middleman)</h4>
+                    <p>Buy @ 12 KES/kg → Sell @ 15 KES/kg</p>
+                    <div class="big-number">3 KES</div>
+                    <p>Profit per kg cartons • 11K/day transport • 2-week delays</p>
+                </div>
+                <div class="profit-box new-model">
+                    <h4>NEW MODEL (Direct Source)</h4>
+                    <p>Buy @ 14 KES/kg → Sell @ 20 KES/kg</p>
+                    <div class="big-number">6 KES</div>
+                    <p>Profit per kg cartons • Own truck • 2 weeks delay</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Investment Breakdown -->
+        <div class="two-column">
+            <div class="column">
+                <div class="section">
+                    <h3>CAPITAL EXPENDITURE (8M KES - 80%)</h3>
+                    <div class="breakdown-item">
+                        <span>Delivery Truck</span>
+                        <strong>3,000,000 KES</strong>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Compressing & Baling Machine</span>
+                        <strong>4,000,000 KES</strong>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Installation & Electricity</span>
+                        <strong>700,000 KES</strong>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Licenses & Permits</span>
+                        <strong>300,000 KES</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section">
+                    <h3>WORKING CAPITAL (2M KES - 20%)</h3>
+                    <div class="breakdown-item">
+                        <span>Working Capital (2 weeks)</span>
+                        <strong>1,680,000 KES</strong>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Power Expense (26 days)</span>
+                        <strong>320,000 KES</strong>
+                    </div>
+                    <p style="margin-top: 12px; font-weight: bold; color: #28a745;">Strategic: 80% in assets for security, 20% for immediate operations</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Daily Revenue & Profit Analysis -->
+        <div class="section">
+            <h3>DAILY REVENUE & GROSS PROFIT ANALYSIS</h3>
+            <div class="profit-comparison">
+                <div class="profit-box old-model">
+                    <h4>OLD MODEL</h4>
+                    <p>Revenue: 5,000 kgs × 15 KES/kg</p>
+                    <div class="big-number">75,000 KES</div>
+                    <p>Gross Profit: 5,000 kgs × 3 KES/kg</p>
+                    <div class="big-number">15,000 KES</div>
+                    <p>Daily revenue & gross profit • 11K transport cost</p>
+                </div>
+                <div class="profit-box new-model">
+                    <h4>NEW MODEL</h4>
+                    <p>Revenue: 10,000 kgs × 20 KES/kg</p>
+                    <div class="big-number">200,000 KES</div>
+                    <p>Gross Profit: 10,000 kgs × 6 KES/kg</p>
+                    <div class="big-number">60,000 KES</div>
+                    <p>Daily revenue & gross profit • 3K fuel cost</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 15px;">
+                <h3>DAILY REVENUE INCREASE: +125,000 KES (167% INCREASE)</h3>
+                <p>Daily Gross Profit Increase: +45,000 KES (300% INCREASE)</p>
+            </div>
+        </div>
+        
+        <!-- Transportation Cost Analysis -->
+        <div class="section">
+            <h3>TRANSPORTATION COST ELIMINATION</h3>
+            <div class="profit-comparison">
+                <div class="profit-box old-model">
+                    <h4>OLD MODEL TRANSPORT COSTS</h4>
+                    <p>11,000 KES per day × 6 days</p>
+                    <div class="big-number">66,000 KES</div>
+                    <p>Weekly transport cost • Middleman dependency</p>
+                </div>
+                <div class="profit-box new-model">
+                    <h4>NEW MODEL TRANSPORT COSTS</h4>
+                    <p>3,000 KES fuel per day × 6 days</p>
+                    <div class="big-number">18,000 KES</div>
+                    <p>Weekly fuel cost • Own truck • 73% savings</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Operational Expenses -->
+        <div class="section">
+            <h3>OPERATIONAL EXPENSES (26 Days)</h3>
+            <div class="breakdown-item">
+                <span>• 21 Workers: 500 KES/day each</span>
+                <strong>273,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• 1 Driver: 2,000 KES/day</span>
+                <strong>52,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Fuel: 3,000 KES/day</span>
+                <strong>78,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Carton Processing Fee: 10% of 10,000 kgs @ 14 KES/kg</span>
+                <strong>364,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Rental: 62,000 KES</span>
+                <strong>62,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Electricity Bill: 40,000 KES/month</span>
+                <strong>40,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Total Operational Expenses</span>
+                <strong>869,000 KES</strong>
+            </div>
+            <p style="margin-top: 12px; font-weight: bold; color: #28a745;">Note: Driver cost was included in old model's 11,000 KES daily transport cost</p>
+        </div>
+        
+        <!-- Profit Calculation -->
+        <div class="section">
+            <h3>PROFIT CALCULATION (26 Days)</h3>
+            <div class="breakdown-item">
+                <span>• Daily Revenue: 200,000 KES</span>
+                <strong>5,200,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Daily Operational Expenses: 33,423 KES</span>
+                <strong>-869,000 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Daily Net Profit: 166,577 KES</span>
+                <strong>4,330,992 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Monthly Net Profit</span>
+                <strong>5,064,341 KES</strong>
+            </div>
+            <div class="breakdown-item">
+                <span>• Annual Net Profit</span>
+                <strong>60,772,092 KES</strong>
+            </div>
+            <p style="margin-top: 12px; font-weight: bold; color: #28a745;">Net Profit Margin: 83.3% • Annual ROI: 607.7%</p>
+        </div>
+        
+        <!-- Financial Returns -->
+        <div class="section">
+            <h3>INVESTOR RETURNS & ROI</h3>
+            <div class="chart-container">
+                <div class="chart-title">Monthly Revenue vs Profit Comparison</div>
+                <canvas id="revenueChart"></canvas>
+            </div>
+            <div class="roi-grid">
+                <div class="roi-card">
+                    <span class="number">10,000</span>
+                    <p>Kgs/Day</p>
+                    <p>(Actual Volume)</p>
+                </div>
+                <div class="roi-card">
+                    <span class="number">6 KES</span>
+                    <p>Revenue/kg</p>
+                    <p>(New Model)</p>
+                </div>
+                <div class="roi-card">
+                    <span class="number">60K</span>
+                    <p>Daily Revenue</p>
+                    <p>(KES)</p>
+                </div>
+                <div class="roi-card">
+                    <span class="number">21.9M</span>
+                    <p>Annual Revenue</p>
+                    <p>(KES)</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Growth & Partnership -->
+        <div class="three-column">
+            <div class="column">
+                <div class="section">
+                    <h3>5-YEAR GROWTH PROJECTION</h3>
+                    <div class="chart-container">
+                        <div class="chart-title">Annual Volume Growth</div>
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                    <div class="year-grid">
+                        <div class="year-box">
+                            <div class="year">Y1</div>
+                            <div class="volume">50K</div>
+                            <div>3.6M</div>
+                        </div>
+                        <div class="year-box">
+                            <div class="year">Y2</div>
+                            <div class="volume">75K</div>
+                            <div>5.4M</div>
+                        </div>
+                        <div class="year-box">
+                            <div class="year">Y3</div>
+                            <div class="volume">100K</div>
+                            <div>7.2M</div>
+                        </div>
+                        <div class="year-box">
+                            <div class="year">Y4</div>
+                            <div class="volume">125K</div>
+                            <div>9.0M</div>
+                        </div>
+                        <div class="year-box">
+                            <div class="year">Y5</div>
+                            <div class="volume">150K</div>
+                            <div>10.8M</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section">
+                    <h3>IMMEDIATE BENEFITS</h3>
+                    <ul>
+                        <li>607.7% Annual ROI (60.8M profit)</li>
+                        <li>166,577 KES daily net profit</li>
+                        <li>5,064,341 KES monthly net profit</li>
+                        <li>8M KES in tangible assets</li>
+                        <li>5,000 KES daily loan repayment</li>
+                        <li>500 KES daily savings/profit</li>
+                        <li>2,500 KES daily maintenance</li>
+                        <li>Total operational expenses (869K monthly)</li>
+                        <li>300% profit increase vs old model</li>
+                        <li>73% transport cost reduction</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column">
+                <div class="section">
+                    <h3>PARTNERSHIP OPTIONS</h3>
+                    <p><strong>Profit Sharing:</strong> Share monthly profits based on investment %</p>
+                    <p><strong>Fixed Returns:</strong> Guaranteed 2.5% monthly + bonuses</p>
+                    <p><strong>Asset Security:</strong> 80% invested in tangible assets</p>
+                    <p><strong>Break-even:</strong> 2.8 years for full recovery</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>YOUR 10M KES INVESTMENT → 5,064,341 KES MONTHLY NET PROFIT</h3>
+            <p>60.8M KES Annual Net Profit • 607.7% Annual ROI • 83.3% Profit Margin • Asset-Backed Security</p>
+        </div>
+        
+        <div class="footer">
+            <p>Ready to discuss your investment partnership? Let's transform this opportunity into recurring profits.</p>
+        </div>
+    </div>
+    
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Revenue vs Profit Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Current Model', 'New Model'],
+                datasets: [{
+                    label: 'Revenue (KES)',
+                    data: [75000000, 200000000], // 5K kgs * 15 KES vs 10K kgs * 20 KES (daily revenue)
+                    backgroundColor: '#007bff',
+                    borderColor: '#0056b3',
+                    borderWidth: 1
+                }, {
+                    label: 'Profit (KES)',
+                    data: [15000000, 60000000], // 5K kgs * 3 KES vs 10K kgs * 6 KES (daily profit)
+                    backgroundColor: '#28a745',
+                    borderColor: '#1e7e34',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString() + ' KES';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+
+        // Growth Projection Chart
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        new Chart(growthCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                datasets: [{
+                    label: 'Monthly Volume (Cartons)',
+                    data: [50000, 75000, 100000, 125000, 150000],
+                    backgroundColor: '#333',
+                    borderColor: '#000',
+                    borderWidth: 1
+                }, {
+                    label: 'Annual Profit (KES)',
+                    data: [3600000, 5400000, 7200000, 9000000, 10800000],
+                    backgroundColor: '#007bff',
+                    borderColor: '#0056b3',
+                    borderWidth: 1,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            }
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        beginAtZero: true,
+                        grid: {
+                            drawOnChartArea: false,
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return (value/1000000).toFixed(1) + 'M KES';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
